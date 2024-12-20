@@ -1,0 +1,50 @@
+{
+  "landing": {
+    "selectLanguage": "Choisir la langue",
+    "welcome": "Bienvenue dans le système bancaire en ligne CBT",
+    "description1": "Profitez d'une expérience bancaire transparente, sécurisée et efficace à portée de main. Rejoignez-nous dès aujourd'hui et prenez le contrôle de vos finances comme jamais auparavant.",
+    "description2": "Que vous soyez ici pour gérer votre compte, explorer nos services ou vous inscrire pour la première fois, nous sommes là pour vous. Votre voyage commence ici.",
+    "signup": "Inscrivez-vous",
+    "signin": "Se connecter"
+  },
+
+  "signin": {
+    "title": "Se connecter",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "submit": "Soumettre",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signup": "Pas encore de compte ? Inscrivez-vous",
+    "success": "Connexion réussie !",
+    "failure": "Échec de la connexion. Veuillez réessayer.",
+    "google": "Se connecter avec Google",
+    "facebook": "Se connecter avec Facebook"
+  },
+  "signup": {
+    "title": "S'inscrire",
+    "username": "Nom d'utilisateur",
+    "fullName": "Nom complet",
+    "email": "E-mail",
+    "dob": "Date de naissance",
+    "idType": {
+      "placeholder": "Sélectionnez le type d'identité",
+      "passport": "Passeport",
+      "nationalId": "Carte nationale"
+    },
+    "idNumber": "Numéro d'identité",
+    "accountType": {
+      "savings": "Épargne",
+      "checking": "Compte courant"
+    },
+    "phoneNumber": "Numéro de téléphone",
+    "password": "Mot de passe",
+    "role": {
+      "user": "Utilisateur",
+      "admin": "Administrateur"
+    },
+    "submit": "S'inscrire",
+    "success": "Inscription réussie!",
+    "failure": "Échec de l'inscription!",
+    "haveAccount": "Vous avez déjà un compte ?"
+  }
+}

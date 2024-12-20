@@ -1,0 +1,86 @@
+/* UserDashboard.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column; /* Change to column layout */
+}
+
+.dashboard-topbar {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+}
+
+.dashboard-logout-button {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-logout-button:hover {
+    background-color: #c82333;
+}
+
+.dashboard-content {
+    display: flex; /* Add a container for sidebar and main content */
+    flex-grow: 1;
+}
+
+.dashboard-sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding: 2rem 1rem;
+    flex-shrink: 0;
+}
+
+.sidebar-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 1rem 0;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu li:hover {
+    background-color: #495057;
+}
+
+.dashboard-main {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.dashboard-main h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-main p {
+    font-size: 1.25rem;
+    color: #666;
+}

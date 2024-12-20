@@ -1,0 +1,83 @@
+/* LandingPage.css */
+
+/* Body and page container */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: url('https://www.nbc.ca/content/dam/fragment/images/ten-reasons-internet-banking-opt.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    color: #0c0b0b;
+    position: relative;
+}
+
+/* Language Selector */
+.language-selector {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.language-selector img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.language-selector img:hover {
+    transform: scale(1.1);
+}
+
+.language-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Main Content */
+.landing-page-content {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+.link-button {
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0056b3;
+    padding: 0.5rem 1rem;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-button:hover {
+    background-color: #0056b3;
+    color: white;
+}

@@ -1,0 +1,49 @@
+{
+  "landing": {
+    "selectLanguage": "Select Language",
+    "welcome": "Welcome to CBT Online Banking System",
+    "description1": "Experience seamless, secure, and efficient banking at your fingertips. Join us today and take control of your finances like never before.",
+    "description2": "Whether you're here to manage your account, explore our services, or sign up for the first time, we’ve got you covered. Your journey starts here.",
+    "signup": "Sign Up",
+    "signin": "Sign In"
+  },
+  "signin": {
+    "title": "Sign In",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign In",
+    "forgotPassword": "Forgot Password?",
+    "signup": "Don't have an account? Sign Up",
+    "success": "Login successful!",
+    "failure": "Login failed. Please try again.",
+    "google": "Sign in with Google",
+    "facebook": "Sign in with Facebook"
+  },
+  "signup": {
+    "title": "Sign Up",
+    "username": "Username",
+    "fullName": "Full Name",
+    "email": "Email",
+    "dob": "Date of Birth",
+    "idType": {
+      "placeholder": "Select ID Type",
+      "passport": "Passport",
+      "nationalId": "National ID"
+    },
+    "idNumber": "ID Number",
+    "accountType": {
+      "savings": "Savings",
+      "checking": "Checking"
+    },
+    "phoneNumber": "Phone Number",
+    "password": "Password",
+    "role": {
+      "user": "User",
+      "admin": "Administrator"
+    },
+    "submit": "Sign Up",
+    "success": "Registration successful!",
+    "failure": "Registration failed!",
+    "haveAccount": "Already have an account?"
+  }
+}
