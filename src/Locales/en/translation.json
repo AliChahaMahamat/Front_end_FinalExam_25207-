@@ -5,7 +5,10 @@
     "description1": "Experience seamless, secure, and efficient banking at your fingertips. Join us today and take control of your finances like never before.",
     "description2": "Whether you're here to manage your account, explore our services, or sign up for the first time, we’ve got you covered. Your journey starts here.",
     "signup": "Sign Up",
-    "signin": "Sign In"
+    "signin": "Sign In",
+    "footerText": "© 2024 Your Bank. All Rights Reserved.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
   },
   "signin": {
     "title": "Sign In",
@@ -13,7 +16,7 @@
     "password": "Password",
     "submit": "Sign In",
     "forgotPassword": "Forgot Password?",
-    "signup": "Don't have an account? Sign Up",
+    "noAccount": "Don't have an account?",
     "success": "Login successful!",
     "failure": "Login failed. Please try again.",
     "google": "Sign in with Google",

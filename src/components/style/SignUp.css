@@ -2,48 +2,47 @@
 .signup-page-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Adjust this to align at the top */
-    min-height: 100vh;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    align-items: center; /* Center both horizontally and vertically */
+    min-height: 100vh; /* Full height for proper centering */
+    background: linear-gradient(135deg, rgba(17, 203, 48, 0.06), #d6dce4);
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding-top: 30px; /* Add some padding at the top */
+    padding: 0;
 }
 
 .signup-form {
     background: #ffffff;
     border-radius: 10px;
-    padding: 20px 30px;
+    padding: 3px 4px; /* Further reduced padding */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 600px; /* Reduced max width */
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 20px; /* Add margin-top to ensure space from the top */
+    gap: 20px; /* Slightly reduced gap */
 }
 
 .signup-title {
-    font-size: 1.8rem;
+    font-size: 1.1rem; /* Reduced font size */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 8px; /* Further reduced margin */
     text-align: center;
     color: #333333;
 }
 
 .signup-input-group {
     display: flex;
-    gap: 15px;
+    gap: 8px; /* Reduced gap */
     justify-content: space-between;
 }
 
 .signup-input,
 .signup-select {
     flex: 1;
-    padding: 10px;
+    padding: 10px; /* Reduced padding */
     border: 1px solid #cccccc;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Slightly smaller font size */
     color: #333333;
     outline: none;
     transition: all 0.3s ease;
@@ -51,7 +50,7 @@
 
 .signup-input:focus,
 .signup-select:focus {
-    border-color: #6a11cb;
+    border-color: rgba(255, 255, 255, 0.98);
     box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
 }
 
@@ -67,10 +66,10 @@
 
 .signup-button {
     width: 100%;
-    padding: 12px;
+    padding: 8px; /* Reduced button height */
     background: linear-gradient(135deg, #2575fc, #6a11cb);
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduced font size */
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -84,10 +83,10 @@
 }
 
 .signup-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Reduced font size */
     color: #666666;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 8px; /* Reduced margin */
 }
 
 .signup-link {
@@ -117,9 +116,9 @@
     }
 }
 
-/* Allow Scrolling */
+/* Remove Scrolling */
 body {
     margin: 0;
-    overflow: auto; /* Allow scrolling */
+    overflow: hidden; /* Disable scrolling */
     height: 100%;
 }

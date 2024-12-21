@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./style/AddUserForm.css";
 
-const AddUserForm = ({ onClose, onUserAdded }) => {
+const AddUserForm = () => {
     const [formData, setFormData] = useState({
         username: "",
         fullName: "",
@@ -17,6 +18,7 @@ const AddUserForm = ({ onClose, onUserAdded }) => {
     });
 
     const [message, setMessage] = useState("");
+    const navigate = useNavigate(); // React Router hook for navigation
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,11 +46,14 @@ const AddUserForm = ({ onClose, onUserAdded }) => {
                 password: "",
                 role: "ROLE_USER",
             });
-            onUserAdded(); // Notify parent to refresh user list
-            setTimeout(onClose, 2000); // Close the form after 2 seconds
+            setTimeout(() => navigate("/admin-dashboard"), 2000); // Redirect after 2 seconds
         } catch (error) {
             setMessage(error.response?.data || "Failed to add user.");
         }
+    };
+
+    const handleCancel = () => {
+        navigate("/admin-dashboard"); // Redirect to Admin Dashboard on cancel
     };
 
     return (
@@ -136,7 +141,7 @@ const AddUserForm = ({ onClose, onUserAdded }) => {
                 </div>
                 <div className="form-actions">
                     <button type="submit">Add User</button>
-                    <button type="button" onClick={onClose}>
+                    <button type="button" onClick={handleCancel}>
                         Cancel
                     </button>
                 </div>

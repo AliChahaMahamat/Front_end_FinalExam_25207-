@@ -1,143 +1,102 @@
-/* AdminDashboard.css */
-
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-div {
+/* Unique styles for Admin Dashboard */
+.dashboard-container {
+    font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f5f7fa;
+    color: #333;
 }
 
-h2 {
-    color: #333;
-    font-size: 24px;
+.dashboard-container h2 {
+    text-align: center;
     margin-bottom: 20px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
+    font-size: 2rem;
+    color: #4a90e2;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.toolbar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.toolbar button {
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.toolbar button:hover {
+    background-color: #357ab8;
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.table thead tr {
-    background-color: #333;
-    color: #fff;
-}
-
-.table th, .table td {
-    padding: 12px;
-    text-align: left;
+.table th,
+.table td {
     border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
 }
 
-.table tbody tr:nth-child(even) {
+.table th {
+    background-color: #4a90e2;
+    color: #fff;
+    cursor: pointer;
+}
+
+.table th:hover {
+    background-color: #357ab8;
+}
+
+.table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.table tbody tr:hover {
+.table tr:hover {
     background-color: #f1f1f1;
 }
-
-.table tbody td[colspan="5"] {
-    text-align: right;
-    font-weight: bold;
-}
-
-.loading,
-.error {
-    text-align: center;
-    color: #777;
-    font-size: 18px;
-    margin-top: 50px;
-}
-.btn {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-sm {
-    font-size: 12px;
-    padding: 3px 7px;
-}
-/* AdminDashboard.css */
-
-/* Style for Add User and Download Users buttons */
-.toolbar button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
-}
-
-.toolbar button:hover {
-    background-color: #0056b3;
-}
-
-.toolbar button + button {
-    background-color: #28a745;
-    margin-left: 10px;
-}
-
-.toolbar button + button:hover {
-    background-color: #218838;
-}
-
-/* Style for search input */
-.toolbar input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-right: 10px;
-    width: 200px;
-}
-
 
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    gap: 10px;
 }
 
 .pagination button {
-    padding: 10px 15px;
-    background-color: #007bff;
+    padding: 8px 12px;
+    background-color: #4a90e2;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 .pagination button:hover {
-    background-color: #0056b3;
+    background-color: #357ab8;
+}
+
+.pagination span {
+    font-size: 14px;
 }
 
 .pagination button:disabled {
@@ -145,7 +104,47 @@ h2 {
     cursor: not-allowed;
 }
 
-.pagination span {
-    margin: 0 10px;
-    font-size: 1rem;
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #a71d2a;
 }

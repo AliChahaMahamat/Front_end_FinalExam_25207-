@@ -11,6 +11,7 @@ const SigninForm = () => {
         password: "",
     });
     const [message, setMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(false); // Track loading state
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -19,19 +20,24 @@ const SigninForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true); // Start loading spinner
+        console.time("Login Process"); // Start timer for debugging
         try {
             const response = await axios.post("http://localhost:8083/api/auth/login", formData);
+            console.timeLog("Login Process", "Response received");
+
             const { token, roles } = response.data;
 
             if (!token || !roles) {
                 throw new Error("Invalid response from the server. Please contact support.");
             }
 
-            localStorage.setItem("token", token); // Store token in localStorage
-            setMessage(t("signin.success")); // Use translated success message
+            localStorage.setItem("token", token); // Store token
+            console.timeLog("Login Process", "Token stored");
+            setMessage(t("signin.success")); // Display success message
 
+            // Normalize and navigate based on role
             const normalizedRole = roles.replace("ROLE_", "");
-
             if (normalizedRole === "ADMIN") {
                 navigate("/admin-dashboard");
             } else if (normalizedRole === "USER") {
@@ -40,7 +46,11 @@ const SigninForm = () => {
                 throw new Error("Unknown role. Please contact support.");
             }
         } catch (error) {
-            setMessage(error.response?.data || t("signin.failure")); // Use translated error message
+            console.timeEnd("Login Process"); // End timer on error
+            setMessage(error.response?.data || t("signin.failure")); // Display error message
+        } finally {
+            setIsLoading(false); // Stop loading spinner
+            console.timeEnd("Login Process"); // End timer
         }
     };
 
@@ -49,7 +59,8 @@ const SigninForm = () => {
             <div className="login_form_container">
                 <form className="login_form" onSubmit={handleSubmit}>
                     <h2>{t("signin.title")}</h2> {/* Use translation for title */}
-                    {message && <p>{message}</p>}
+                    {message && <p className="message">{message}</p>} {/* Display messages */}
+                    {isLoading && <div className="spinner">Calling API, please wait...</div>} {/* Display loading spinner */}
                     <div className="input_group">
                         <input
                             type="text"
@@ -70,26 +81,37 @@ const SigninForm = () => {
                             value={formData.password}
                         />
                     </div>
-                    <button id="login_button" type="submit">{t("signin.submit")}</button> {/* Translate button text */}
-                    <div className="signin-social-login-buttons">
-                        <button type="button" className="signin-social-button signin-google-button" disabled>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"
-                                alt="Google logo"
-                            />
-                            {t("signin.google")}
-                        </button>
-                        <button type="button" className="signin-social-button signin-facebook-button" disabled>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                                alt="Facebook logo"
-                            />
-                            {t("signin.facebook")}
-                        </button>
-                    </div>
-                    <div className="fotter">
+                    <button id="signin_login_button" type="submit" disabled={isLoading}>
+                        {t("signin.submit")}
+                    </button> {/* Translate button text */}
+                    <div className="signin_forgot_password">
                         <Link to="/forgot-password">{t("signin.forgotPassword")}</Link> {/* Translate forgot password link */}
-                        <Link to="/signup">{t("signin.signup")}</Link> {/* Translate sign up link */}
+                    </div>
+                    <div className="signin_social_buttons">
+                        <div className="social_button_pair">
+                            <button type="button" className="signin_social_button signin_google_button" disabled>
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"
+                                    alt="Google logo"
+                                />
+                                {t("signin.google")}
+                            </button>
+                            <button type="button" className="signin_social_button signin_facebook_button" disabled>
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                                    alt="Facebook logo"
+                                />
+                                {t("signin.facebook")}
+                            </button>
+                        </div>
+                    </div>
+                    <div className="signin_footer">
+                        <p className="sigin-text">
+                            {t("signin.noAccount")}{" "}
+                            <Link to="/signup" className="signin-link">
+                                {t("signup.submit")}
+                            </Link>
+                        </p>
                     </div>
                 </form>
             </div>

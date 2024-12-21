@@ -12,7 +12,7 @@ const AdminDashboard = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [, setSortField] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3; // Number of users per page
+    const itemsPerPage = 4; // Number of users per page
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -171,17 +171,19 @@ const AdminDashboard = () => {
                     value={searchTerm}
                     onChange={handleSearch}
                 />
-                <button onClick={() => setShowAddUserForm(true)}>Add User</button>
-                <button onClick={handleDownload} style={{ marginLeft: "10px" }}>
+                <button
+                    onClick={() => navigate("/AddUserForm")}
+                    className="btn-add-user"
+                >
+                    Add User
+                </button>
+
+                <button onClick={handleDownload} style={{marginLeft: "10px"}}>
                     Download Users
                 </button>
+
             </div>
-            {showAddUserForm && (
-                <AddUserForm
-                    onClose={() => setShowAddUserForm(false)}
-                    onUserAdded={refreshUsers}
-                />
-            )}
+
             <table className="table">
                 <thead>
                 <tr>
