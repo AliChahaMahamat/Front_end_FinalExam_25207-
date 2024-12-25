@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./style/UserDashboard.css";
+import AdminDashboard from "./AdminDashboard";
 
-const UserDashboard = () => {
+const AdminMenu = () => {
     const [userDetails, setUserDetails] = useState(null);
     const navigate = useNavigate();
 
@@ -66,7 +67,7 @@ const UserDashboard = () => {
                             <li onClick={() => navigate("/transaction-history")}>Transaction History</li>
                             <li onClick={() => navigate("/money-transfer")}>Money Transfer</li>
                             <li onClick={() => navigate("/notifications")}>Notifications</li>
-                            <li>Bill Payments</li>
+                            <li onClick={() => navigate("/admin-dashboard")}>Manage All Users</li>
                             <li onClick={() => navigate("/profile-management")}>Profile Management</li>
                         </ul>
                     </nav>
@@ -76,4 +77,4 @@ const UserDashboard = () => {
     );
 };
 
-export default UserDashboard;
+export default AdminMenu;

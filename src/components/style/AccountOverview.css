@@ -1,0 +1,107 @@
+.account-overview {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    min-height: 80vh;
+}
+
+.account-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.account-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.account-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.action-buttons {
+    margin-top: 10px;
+}
+
+.action-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back {
+    background-color: #007bff;
+    color: white;
+    position: absolute;
+    top: 500px;
+    right: 580px;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.btn-logout:hover {
+    background-color: #a71d2a;
+}
+
+.account-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.account-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.account-card:hover {
+    transform: scale(1.05);
+}
+
+.account-card p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.account-card strong {
+    color: #000;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.no-accounts {
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+}

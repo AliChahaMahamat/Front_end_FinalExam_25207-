@@ -26,6 +26,8 @@ const SigninForm = () => {
             const response = await axios.post("http://localhost:8083/api/auth/login", formData);
             console.timeLog("Login Process", "Response received");
 
+            console.log("Response:", response.data); // Debugging line
+
             const { token, roles } = response.data;
 
             if (!token || !roles) {
@@ -39,7 +41,7 @@ const SigninForm = () => {
             // Normalize and navigate based on role
             const normalizedRole = roles.replace("ROLE_", "");
             if (normalizedRole === "ADMIN") {
-                navigate("/admin-dashboard");
+                navigate("/admin-menu");
             } else if (normalizedRole === "USER") {
                 navigate("/user-dashboard");
             } else {
